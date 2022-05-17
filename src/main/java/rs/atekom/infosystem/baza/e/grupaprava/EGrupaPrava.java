@@ -1,6 +1,9 @@
 package rs.atekom.infosystem.baza.e.grupaprava;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import rs.atekom.infosystem.baza.OsnovnaSema;
@@ -25,6 +28,9 @@ public class EGrupaPrava extends OsnovnaSema{
 		// TODO Auto-generated constructor stub
 		}
 
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "pretplatnik", nullable = true)
 	public DPretplatnik getPretplatnik() {
 		return pretplatnik;
 		}
