@@ -12,6 +12,7 @@ import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.a.agencija.AAgencija;
 import rs.atekom.infosystem.baza.a.uloga.AUloga;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
+import rs.atekom.infosystem.baza.e.grupaprava.EGrupaPrava;
 import rs.atekom.infosystem.baza.g.GPartner;
 import rs.atekom.infosystem.baza.i.IAdresa;
 
@@ -33,6 +34,7 @@ public class HKontakt extends OsnovnaSema{
 	//@OneToOne(mappedBy = "kontakt")
 	private IAdresa adresa;
 	private Boolean pristup;
+	private EGrupaPrava grupaPrava;
 	private Boolean aktivan;
 	//private Boolean sistem;
 	private AUloga uloga;
@@ -136,6 +138,15 @@ public class HKontakt extends OsnovnaSema{
 	public void setPristup(Boolean pristup) {
 		this.pristup = pristup;
 		}
+	
+	public EGrupaPrava getGrupaPrava() {
+		return grupaPrava;
+		}
+
+	public void setGrupaPrava(EGrupaPrava grupaPrava) {
+		this.grupaPrava = grupaPrava;
+		}
+
 	/*
 	@Column(name = "sistem", nullable = false)
 	public Boolean getSistem() {

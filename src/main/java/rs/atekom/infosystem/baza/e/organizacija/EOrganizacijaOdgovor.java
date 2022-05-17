@@ -1,4 +1,4 @@
-package rs.atekom.infosystem.baza.e;
+package rs.atekom.infosystem.baza.e.organizacija;
 
 import java.util.List;
 import rs.atekom.infosystem.baza.RestOdgovoriStrane;

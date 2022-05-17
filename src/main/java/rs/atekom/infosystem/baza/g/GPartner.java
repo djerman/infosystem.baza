@@ -10,8 +10,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
-import rs.atekom.infosystem.baza.f.FGrupaPartnera;
-import rs.atekom.infosystem.baza.f.FPreduzece;
+import rs.atekom.infosystem.baza.f.grupapartnera.FGrupaPartnera;
+import rs.atekom.infosystem.baza.f.preduzece.FPreduzece;
 
 @Entity
 @Table(name = "g_partner")

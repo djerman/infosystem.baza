@@ -3,7 +3,7 @@ package rs.atekom.infosystem.baza.g;
 import java.io.Serializable;
 import java.util.List;
 
-import rs.atekom.infosystem.baza.f.FPreduzece;
+import rs.atekom.infosystem.baza.f.preduzece.FPreduzece;
 import rs.atekom.infosystem.baza.i.IAdresa;
 
 public class GPartnerOdgovorPodaci implements Serializable{

@@ -1,7 +1,8 @@
 package rs.atekom.infosystem.baza.d.pretplatnik;
 
 import java.io.Serializable;
-import rs.atekom.infosystem.baza.e.EOrganizacija;
+
+import rs.atekom.infosystem.baza.e.organizacija.EOrganizacija;
 
 public class DPretplatnikPodaciOdgovor implements Serializable{
 

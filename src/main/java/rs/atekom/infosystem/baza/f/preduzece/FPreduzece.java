@@ -1,4 +1,4 @@
-package rs.atekom.infosystem.baza.f;
+package rs.atekom.infosystem.baza.f.preduzece;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

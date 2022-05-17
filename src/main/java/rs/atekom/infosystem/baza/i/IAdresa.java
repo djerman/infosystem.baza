@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.c.CMesto;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
-import rs.atekom.infosystem.baza.e.EOrganizacija;
+import rs.atekom.infosystem.baza.e.organizacija.EOrganizacija;
 import rs.atekom.infosystem.baza.g.GPartner;
 import rs.atekom.infosystem.baza.h.HKontakt;
 

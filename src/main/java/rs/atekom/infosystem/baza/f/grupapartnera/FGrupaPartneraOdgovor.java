@@ -1,9 +1,10 @@
-package rs.atekom.infosystem.baza.f;
+package rs.atekom.infosystem.baza.f.grupapartnera;
 
-import java.io.Serializable;
+
 import java.util.List;
+import rs.atekom.infosystem.baza.RestOdgovoriStrane;
 
-public class FGrupaPartneraOdgovor implements Serializable{
+public class FGrupaPartneraOdgovor extends RestOdgovoriStrane{
 
 	private static final long serialVersionUID = 1L;
 	private FGrupaPartnera grupa;

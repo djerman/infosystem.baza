@@ -3,7 +3,7 @@ package rs.atekom.infosystem.baza.g;
 import java.util.List;
 import rs.atekom.infosystem.baza.RestOdgovoriStrane;
 import rs.atekom.infosystem.baza.c.CMesto;
-import rs.atekom.infosystem.baza.f.FGrupaPartnera;
+import rs.atekom.infosystem.baza.f.grupapartnera.FGrupaPartnera;
 
 public class GPartnerOdgovor extends RestOdgovoriStrane{
 

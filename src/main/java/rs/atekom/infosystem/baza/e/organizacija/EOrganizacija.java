@@ -1,30 +1,32 @@
-package rs.atekom.infosystem.baza.f;
+package rs.atekom.infosystem.baza.e.organizacija;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
+import rs.atekom.infosystem.baza.i.IAdresa;
 
 @Entity
-@Table(name = "f_grupapartnera")
-public class FGrupaPartnera extends OsnovnaSema{
+@Table(name = "e_organizacija")
+public class EOrganizacija extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;
 	private DPretplatnik pretplatnik;
 	private String naziv;
 	private String opis;
-
-	public FGrupaPartnera() {
+	private Boolean sediste;
+	private IAdresa adresa;
+	
+	public EOrganizacija() {
 		// TODO Auto-generated constructor stub
 		}
 
-	public String toString() {
-		return this.naziv;
-		}
-	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "pretplatnik", nullable = false)
 	public DPretplatnik getPretplatnik() {
@@ -33,6 +35,16 @@ public class FGrupaPartnera extends OsnovnaSema{
 
 	public void setPretplatnik(DPretplatnik pretplatnik) {
 		this.pretplatnik = pretplatnik;
+		}
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "adresa", referencedColumnName = "id", nullable = true)
+    public IAdresa getAdresa() {
+        return adresa;
+        }
+    
+	public void setAdresa(IAdresa adresa) {
+		this.adresa = adresa;
 		}
 
 	public String getNaziv() {
@@ -49,6 +61,15 @@ public class FGrupaPartnera extends OsnovnaSema{
 
 	public void setOpis(String opis) {
 		this.opis = opis;
+		}
+
+	@Column(name = "sediste", nullable = false)
+	public Boolean getSediste() {
+		return sediste;
+		}
+
+	public void setSediste(Boolean sediste) {
+		this.sediste = sediste;
 		}
 	
 	}
