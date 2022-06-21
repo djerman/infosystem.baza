@@ -6,13 +6,14 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Size;
 
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.d.kontoklasa.DKontoKlasa;
 
 @Entity
-@Table(name = "da_kontogrupa")
+@Table(name = "da_kontogrupa", uniqueConstraints = @UniqueConstraint(columnNames = {"klasa", "sifra", "naziv"}))
 public class DAKontoGrupa extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;

@@ -6,6 +6,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Size;
 
 import rs.atekom.infosystem.baza.OsnovnaSema;
@@ -13,7 +14,7 @@ import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
 import rs.atekom.infosystem.baza.db.kontoracun.DBKontoRacun;
 
 @Entity
-@Table(name = "e_konto")
+@Table(name = "e_konto", uniqueConstraints = @UniqueConstraint(columnNames = {"pretplatnik", "podgrupa", "sifra"}))
 public class EKonto extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;

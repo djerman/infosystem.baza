@@ -6,8 +6,10 @@ D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\i\IBankovni
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\da\kontogrupa\DAKontoGrupa.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\da\kontogrupa\DAKontoGrupaOdgovor.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\RestOdgovoriStrane.java
+D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\a\tipbrojaca\ATipBrojaca.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\a\jedinicamere\AJedinicaMere.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\f\grupeprava\FGrupePrava.java
+D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\f\brojac\FBrojacOdgovor.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\h\HKontakt.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\e\godina\EGodinaOdgovor.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\i\grupaartikala\IGrupaArtikalaOdgovor.java
@@ -43,6 +45,7 @@ D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\d\pretplatn
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\e\godina\EGodina.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\g\GPartnerOdgovor.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\a\prava\APravaOdgovor.java
+D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\f\brojac\FBrojac.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\d\kontoklasa\DKontoKlasaOdgovor.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\j\JArtikalOdgovor.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\j\JArtikal.java

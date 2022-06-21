@@ -1,13 +1,17 @@
 package rs.atekom.infosystem.baza.i.grupaartikala;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
 
 @Entity
-@Table(name = "f_grupaartikala")
+@Table(name = "i_grupaartikala", uniqueConstraints = {@UniqueConstraint(columnNames = {"pretplatnik", "sifra"}), @UniqueConstraint(columnNames = {"pretplatnik", "naziv"})})
 public class IGrupaArtikala extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;
@@ -20,6 +24,12 @@ public class IGrupaArtikala extends OsnovnaSema{
 		// TODO Auto-generated constructor stub
 		}
 
+	public String toString() {
+		return this.naziv;
+		}
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "pretplatnik", nullable = false)
 	public DPretplatnik getPretplatnik() {
 		return pretplatnik;
 		}

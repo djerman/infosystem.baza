@@ -4,7 +4,11 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.a.jedinicamere.AJedinicaMere;
@@ -13,7 +17,7 @@ import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
 import rs.atekom.infosystem.baza.i.grupaartikala.IGrupaArtikala;
 
 @Entity
-@Table(name = "j_artikal")
+@Table(name = "j_artikal", uniqueConstraints = {@UniqueConstraint(columnNames = {"pretplatnik", "naziv"}), @UniqueConstraint(columnNames = {"pretplatnik", "sifra"})})
 public class JArtikal extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;
@@ -21,23 +25,25 @@ public class JArtikal extends OsnovnaSema{
 	private String sifra;
 	private IGrupaArtikala grupa;
 	private String naziv;
-	private String en;
-	private String de;
+	private String barcode;
 	private AJedinicaMere jm;
 	private APoreskaTarifa poreskaTarifa;
-	private String opis;
-	private String opis_sr;
-	private String opis_en;
-	private String opis_de;
+	private String en;
+	private String de;
 	private Long proizvodnja;
 	private Date rokTrajanja;
 	private BigDecimal infCena;
 	private BigDecimal rastur;
+	private String opis;
+	private String opis_en;
+	private String opis_de;
 	
 	public JArtikal() {
 		// TODO Auto-generated constructor stub
 		}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "pretplatnik", nullable = false)
 	public DPretplatnik getPretplatnik() {
 		return pretplatnik;
 		}
@@ -54,6 +60,8 @@ public class JArtikal extends OsnovnaSema{
 		this.sifra = sifra;
 		}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "grupa", nullable = true)
 	public IGrupaArtikala getGrupa() {
 		return grupa;
 		}
@@ -86,6 +94,8 @@ public class JArtikal extends OsnovnaSema{
 		this.de = de;
 		}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "jm", nullable = false)
 	public AJedinicaMere getJm() {
 		return jm;
 		}
@@ -94,6 +104,8 @@ public class JArtikal extends OsnovnaSema{
 		this.jm = jm;
 		}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "poreskaTarifa", nullable = false)
 	public APoreskaTarifa getPoreskaTarifa() {
 		return poreskaTarifa;
 		}
@@ -110,12 +122,12 @@ public class JArtikal extends OsnovnaSema{
 		this.opis = opis;
 		}
 
-	public String getOpis_sr() {
-		return opis_sr;
+	public String getBarcode() {
+		return barcode;
 		}
 
-	public void setOpis_sr(String opis_sr) {
-		this.opis_sr = opis_sr;
+	public void setBarcode(String barcode) {
+		this.barcode = barcode;
 		}
 
 	public String getOpis_en() {

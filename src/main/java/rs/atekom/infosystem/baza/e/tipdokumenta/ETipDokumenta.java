@@ -2,11 +2,13 @@ package rs.atekom.infosystem.baza.e.tipdokumenta;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
 
 @Entity
-@Table(name = "e_tipdokumenta")
+@Table(name = "e_tipdokumenta", uniqueConstraints = @UniqueConstraint(columnNames = {"sifra", "naziv"}))
 public class ETipDokumenta extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;

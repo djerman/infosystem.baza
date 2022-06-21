@@ -7,11 +7,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.persistence.UniqueConstraint;
+
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.a.agencija.AAgencija;
 
 @Entity
-@Table(name = "d_pretplatnik")
+@Table(name = "d_pretplatnik", uniqueConstraints = @UniqueConstraint(columnNames = {"naziv", "pib"}))
 public class DPretplatnik extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;

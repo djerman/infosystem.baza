@@ -7,11 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 
 import rs.atekom.infosystem.baza.OsnovnaSema;
 
 @Entity
-@Table(name = "a_poreskatarifa")
+@Table(name = "a_poreskatarifa", uniqueConstraints = @UniqueConstraint(columnNames = {"sifra", "naziv"}))
 public class APoreskaTarifa extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;

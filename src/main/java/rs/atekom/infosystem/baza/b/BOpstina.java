@@ -6,12 +6,13 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.a.drzava.ADrzava;
 
 @Entity
-@Table(name = "b_opstina")
+@Table(name = "b_opstina", uniqueConstraints = @UniqueConstraint(columnNames = {"drzava", "naziv"}))
 public class BOpstina extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;

@@ -2,10 +2,12 @@ package rs.atekom.infosystem.baza.a.uloga;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
 import rs.atekom.infosystem.baza.OsnovnaSema;
 
 @Entity
-@Table(name = "a_uloga")
+@Table(name = "a_uloga", uniqueConstraints = @UniqueConstraint(columnNames = {"naziv"}))
 public class AUloga extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;

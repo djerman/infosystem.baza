@@ -1,19 +1,23 @@
 package rs.atekom.infosystem.baza.f.grupapartnera;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
 
 @Entity
-@Table(name = "f_grupapartnera")
+@Table(name = "f_grupapartnera", uniqueConstraints = @UniqueConstraint(columnNames = {"pretplatnik", "sifra"}))
 public class FGrupaPartnera extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;
 	private DPretplatnik pretplatnik;
+	private String sifra;
 	private String naziv;
 	private String opis;
 
@@ -33,6 +37,15 @@ public class FGrupaPartnera extends OsnovnaSema{
 
 	public void setPretplatnik(DPretplatnik pretplatnik) {
 		this.pretplatnik = pretplatnik;
+		}
+
+	@Column(name = "sifra", nullable = false)
+	public String getSifra() {
+		return sifra;
+		}
+
+	public void setSifra(String sifra) {
+		this.sifra = sifra;
 		}
 
 	public String getNaziv() {

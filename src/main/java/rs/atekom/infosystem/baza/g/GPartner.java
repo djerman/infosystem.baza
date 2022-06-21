@@ -8,13 +8,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
 import rs.atekom.infosystem.baza.f.grupapartnera.FGrupaPartnera;
 import rs.atekom.infosystem.baza.f.preduzece.FPreduzece;
 
 @Entity
-@Table(name = "g_partner")
+@Table(name = "g_partner", uniqueConstraints = @UniqueConstraint(columnNames = {"pretplatnik", "sifra"}))
 public class GPartner extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;

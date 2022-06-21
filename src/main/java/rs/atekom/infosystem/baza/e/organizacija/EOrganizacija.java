@@ -8,16 +8,19 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
 import rs.atekom.infosystem.baza.i.IAdresa;
 
 @Entity
-@Table(name = "e_organizacija")
+@Table(name = "e_organizacija", uniqueConstraints = @UniqueConstraint(columnNames = {"pretplatnik", "sifra"}))
 public class EOrganizacija extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;
 	private DPretplatnik pretplatnik;
+	private String sifra;
 	private String naziv;
 	private String opis;
 	private Boolean sediste;
@@ -35,6 +38,14 @@ public class EOrganizacija extends OsnovnaSema{
 
 	public void setPretplatnik(DPretplatnik pretplatnik) {
 		this.pretplatnik = pretplatnik;
+		}
+
+	public String getSifra() {
+		return sifra;
+		}
+
+	public void setSifra(String sifra) {
+		this.sifra = sifra;
 		}
 
 	@OneToOne(cascade = CascadeType.ALL)

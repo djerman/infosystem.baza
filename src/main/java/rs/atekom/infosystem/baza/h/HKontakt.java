@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.a.agencija.AAgencija;
 import rs.atekom.infosystem.baza.a.uloga.AUloga;
@@ -17,7 +19,8 @@ import rs.atekom.infosystem.baza.g.GPartner;
 import rs.atekom.infosystem.baza.i.IAdresa;
 
 @Entity
-@Table(name = "h_kontakt")
+@Table(name = "h_kontakt", uniqueConstraints = {@UniqueConstraint(columnNames = {"pretplatnik", "ime", "prezime"}), @UniqueConstraint(columnNames = {"pretplatnik", "korisnicko"}),
+		@UniqueConstraint(columnNames = {"agencija", "ime", "prezime"}), @UniqueConstraint(columnNames = {"agencija", "korisnicko"})})
 public class HKontakt extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;

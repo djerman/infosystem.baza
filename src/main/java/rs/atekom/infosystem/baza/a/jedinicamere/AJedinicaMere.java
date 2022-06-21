@@ -3,11 +3,12 @@ package rs.atekom.infosystem.baza.a.jedinicamere;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import rs.atekom.infosystem.baza.OsnovnaSema;
 
 @Entity
-@Table(name = "a_jedinicamere")
+@Table(name = "a_jedinicamere", uniqueConstraints = @UniqueConstraint(columnNames = {"naziv", "oznaka"}))
 public class AJedinicaMere extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;

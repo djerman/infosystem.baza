@@ -3,12 +3,13 @@ package rs.atekom.infosystem.baza.d.kontoklasa;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Size;
 
 import rs.atekom.infosystem.baza.OsnovnaSema;
 
 @Entity
-@Table(name = "d_kontoklasa")
+@Table(name = "d_kontoklasa", uniqueConstraints = @UniqueConstraint(columnNames = {"sifra", "naziv"}))
 public class DKontoKlasa extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;

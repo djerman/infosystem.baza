@@ -3,11 +3,12 @@ package rs.atekom.infosystem.baza.a.agencija;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import rs.atekom.infosystem.baza.OsnovnaSema;
 
 @Entity
-@Table(name = "a_agencija", catalog = "atekom")
+@Table(name = "a_agencija", uniqueConstraints = @UniqueConstraint(columnNames = {"naziv"}))
 public class AAgencija extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;
