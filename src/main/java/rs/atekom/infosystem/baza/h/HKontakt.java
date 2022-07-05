@@ -47,7 +47,7 @@ public class HKontakt extends OsnovnaSema{
 		}
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "pretplatnik")
+	@JoinColumn(name = "pretplatnik", nullable = false)
 	public DPretplatnik getPretplatnik() {
 		return pretplatnik;
 		}
@@ -142,6 +142,8 @@ public class HKontakt extends OsnovnaSema{
 		this.pristup = pristup;
 		}
 	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "grupaPrava")
 	public EGrupaPrava getGrupaPrava() {
 		return grupaPrava;
 		}

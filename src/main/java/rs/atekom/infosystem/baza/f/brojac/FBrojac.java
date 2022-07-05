@@ -1,6 +1,9 @@
 package rs.atekom.infosystem.baza.f.brojac;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import rs.atekom.infosystem.baza.OsnovnaSema;
@@ -24,6 +27,8 @@ public class FBrojac extends OsnovnaSema{
 		// TODO Auto-generated constructor stub
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "pretplatnik", nullable = false)
 	public DPretplatnik getPretplatnik() {
 		return pretplatnik;
 	}
@@ -64,6 +69,8 @@ public class FBrojac extends OsnovnaSema{
 		this.sufiks = sufiks;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "tip", nullable = false)
 	public ATipBrojaca getTip() {
 		return tip;
 	}

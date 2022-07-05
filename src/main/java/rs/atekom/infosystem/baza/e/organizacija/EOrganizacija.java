@@ -1,18 +1,14 @@
 package rs.atekom.infosystem.baza.e.organizacija;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
-import rs.atekom.infosystem.baza.i.IAdresa;
 
 @Entity
 @Table(name = "e_organizacija", uniqueConstraints = @UniqueConstraint(columnNames = {"pretplatnik", "sifra"}))
@@ -23,8 +19,9 @@ public class EOrganizacija extends OsnovnaSema{
 	private String sifra;
 	private String naziv;
 	private String opis;
+	@Column(name = "sediste", nullable = false)
 	private Boolean sediste;
-	private IAdresa adresa;
+	//private IAdresa adresa;
 	
 	public EOrganizacija() {
 		// TODO Auto-generated constructor stub
@@ -48,8 +45,8 @@ public class EOrganizacija extends OsnovnaSema{
 		this.sifra = sifra;
 		}
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "adresa", referencedColumnName = "id", nullable = true)
+	/*
+	@OneToOne(optional = false, cascade =  CascadeType.ALL, mappedBy = "organizacija")
     public IAdresa getAdresa() {
         return adresa;
         }
@@ -57,7 +54,7 @@ public class EOrganizacija extends OsnovnaSema{
 	public void setAdresa(IAdresa adresa) {
 		this.adresa = adresa;
 		}
-
+        */
 	public String getNaziv() {
 		return naziv;
 		}
@@ -74,7 +71,6 @@ public class EOrganizacija extends OsnovnaSema{
 		this.opis = opis;
 		}
 
-	@Column(name = "sediste", nullable = false)
 	public Boolean getSediste() {
 		return sediste;
 		}

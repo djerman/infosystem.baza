@@ -6,33 +6,27 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.c.CMesto;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
 import rs.atekom.infosystem.baza.e.organizacija.EOrganizacija;
 import rs.atekom.infosystem.baza.g.GPartner;
-import rs.atekom.infosystem.baza.h.HKontakt;
 
 @Entity
-@Table(name = "i_adresa", catalog = "atekom")
+@Table(name = "i_adresa")
 public class IAdresa extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;
 	private DPretplatnik pretplatnik;
-	
-	@OneToOne(mappedBy = "adresa")
 	private EOrganizacija organizacija;
-	
 	private GPartner partner;
-	
-	@OneToOne(mappedBy = "adresa")
-	private HKontakt kontakt;
-	
 	private String naziv;
 	private CMesto mesto;
-	private String adresa;
+	
+	@Column(name = "ulicaBroj", nullable = false)
+	private String ulicaBroj;
+	
 	private String opis;
 	private Boolean sediste;
 	
@@ -50,9 +44,8 @@ public class IAdresa extends OsnovnaSema{
 		this.pretplatnik = pretplatnik;
 		}
 
-	//@OneToOne(cascade = CascadeType.ALL)
-	//@JoinColumn(name = "organizacija", referencedColumnName = "id", nullable = true)
-	/*
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "organizacija", nullable = true)
 	public EOrganizacija getOrganizacija() {
 		return organizacija;
 		}
@@ -60,7 +53,7 @@ public class IAdresa extends OsnovnaSema{
 	public void setOrganizacija(EOrganizacija organizacija) {
 		this.organizacija = organizacija;
 		}
-*/
+	
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "partner", nullable = true)
 	public GPartner getPartner() {
@@ -71,17 +64,6 @@ public class IAdresa extends OsnovnaSema{
 		this.partner = partner;
 		}
 
-	//@OneToOne(cascade = CascadeType.ALL)
-	//@JoinColumn(name = "kontakt", referencedColumnName = "id", nullable = true)
-	/*
-	public HKontakt getKontakt() {
-		return kontakt;
-		}
-
-	public void setKontakt(HKontakt kontakt) {
-		this.kontakt = kontakt;
-		}
-*/
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "mesto", nullable = true)
 	public CMesto getMesto() {
@@ -92,13 +74,12 @@ public class IAdresa extends OsnovnaSema{
 		this.mesto = mesto;
 		}
 
-	@Column(name = "adresa", nullable = false)
-	public String getAdresa() {
-		return adresa;
+	public String getUlicaBroj() {
+		return ulicaBroj;
 		}
 
-	public void setAdresa(String adresa) {
-		this.adresa = adresa;
+	public void setUlicaBroj(String ulicaBroj) {
+		this.ulicaBroj = ulicaBroj;
 		}
 
 	public String getNaziv() {
@@ -124,22 +105,5 @@ public class IAdresa extends OsnovnaSema{
 	public void setSediste(Boolean sediste) {
 		this.sediste = sediste;
 		}
-	
-	/*
-	public EOrganizacija getOrganizacija() {
-		return organizacija;
-		}
 
-	public void setOrganizacija(EOrganizacija organizacija) {
-		this.organizacija = organizacija;
-		}
-	
-	public HKontakt getKontakt() {
-		return kontakt;
-		}
-
-	public void setKontakt(HKontakt kontakt) {
-		this.kontakt = kontakt;
-		}
-	*/
 	}

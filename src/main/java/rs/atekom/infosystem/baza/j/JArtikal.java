@@ -2,28 +2,33 @@ package rs.atekom.infosystem.baza.j;
 
 import java.math.BigDecimal;
 import java.util.Date;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.a.jedinicamere.AJedinicaMere;
 import rs.atekom.infosystem.baza.a.poreskatarifa.APoreskaTarifa;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
+import rs.atekom.infosystem.baza.e.konto.EKonto;
 import rs.atekom.infosystem.baza.i.grupaartikala.IGrupaArtikala;
 
 @Entity
-@Table(name = "j_artikal", uniqueConstraints = {@UniqueConstraint(columnNames = {"pretplatnik", "naziv"}), @UniqueConstraint(columnNames = {"pretplatnik", "sifra"})})
+@Table(name = "j_artikal", uniqueConstraints = {
+		@UniqueConstraint(name = "UniquePretplatnikAndNaziv", columnNames = {"pretplatnik", "naziv"}), 
+		@UniqueConstraint(name = "UniquePretplatnikAndSifra", columnNames = {"pretplatnik", "sifra"})})
 public class JArtikal extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;
 	private DPretplatnik pretplatnik;
-	private String sifra;
+	private Integer tip;
 	private IGrupaArtikala grupa;
+	private String sifra;
 	private String naziv;
 	private String barcode;
 	private AJedinicaMere jm;
@@ -37,6 +42,8 @@ public class JArtikal extends OsnovnaSema{
 	private String opis;
 	private String opis_en;
 	private String opis_de;
+	private EKonto prihod;
+	private EKonto rashod;
 	
 	public JArtikal() {
 		// TODO Auto-generated constructor stub
@@ -52,6 +59,17 @@ public class JArtikal extends OsnovnaSema{
 		this.pretplatnik = pretplatnik;
 		}
 
+	@Column(nullable = false)
+	public Integer getTip() {
+		return tip;
+		}
+
+	public void setTip(Integer tip) {
+		this.tip = tip;
+		}
+
+	@Column(nullable = false)
+	@Size(max = 20)
 	public String getSifra() {
 		return sifra;
 		}
@@ -70,6 +88,8 @@ public class JArtikal extends OsnovnaSema{
 		this.grupa = grupa;
 		}
 
+	@NotNull
+	@Size(min = 3, max = 45, message = "prekratko ili predugo")
 	public String getNaziv() {
 		return naziv;
 		}
@@ -78,6 +98,7 @@ public class JArtikal extends OsnovnaSema{
 		this.naziv = naziv;
 		}
 
+	@Size(max = 50)
 	public String getEn() {
 		return en;
 		}
@@ -86,6 +107,7 @@ public class JArtikal extends OsnovnaSema{
 		this.en = en;
 		}
 
+	@Size(max = 50)
 	public String getDe() {
 		return de;
 		}
@@ -114,6 +136,7 @@ public class JArtikal extends OsnovnaSema{
 		this.poreskaTarifa = poreskaTarifa;
 		}
 
+	@Size(max = 256)
 	public String getOpis() {
 		return opis;
 		}
@@ -122,6 +145,7 @@ public class JArtikal extends OsnovnaSema{
 		this.opis = opis;
 		}
 
+	@Size(max = 20)
 	public String getBarcode() {
 		return barcode;
 		}
@@ -130,6 +154,7 @@ public class JArtikal extends OsnovnaSema{
 		this.barcode = barcode;
 		}
 
+	@Size(max = 256)
 	public String getOpis_en() {
 		return opis_en;
 		}
@@ -138,6 +163,7 @@ public class JArtikal extends OsnovnaSema{
 		this.opis_en = opis_en;
 		}
 
+	@Size(max = 256)
 	public String getOpis_de() {
 		return opis_de;
 		}
@@ -177,5 +203,26 @@ public class JArtikal extends OsnovnaSema{
 	public void setRastur(BigDecimal rastur) {
 		this.rastur = rastur;
 		}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "prihod", nullable = true)
+	public EKonto getPrihod() {
+		return prihod;
+	}
+
+	public void setPrihod(EKonto prihod) {
+		this.prihod = prihod;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "rashod", nullable = true)
+	public EKonto getRashod() {
+		return rashod;
+	}
+
+	public void setRashod(EKonto rashod) {
+		this.rashod = rashod;
+	}
+	
 	
 	}

@@ -4,7 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-
 import rs.atekom.infosystem.baza.OsnovnaSema;
 
 @Entity
@@ -19,6 +18,7 @@ public class ADrzava extends OsnovnaSema{
 	private String pozivniBroj;
 	private String oznaka;
 	private Boolean podrazumevan;
+	//private List<BOpstina> opstine;
 
 	public ADrzava() {
 		// TODO Auto-generated constructor stub
@@ -85,5 +85,14 @@ public class ADrzava extends OsnovnaSema{
 	public void setPodrazumevan(Boolean podrazumevan) {
 		this.podrazumevan = podrazumevan;
 		}
+
+	/*@OneToMany(mappedBy = "drzava", cascade = CascadeType.ALL)
+	public List<BOpstina> getOpstine() {
+		return opstine;
+	}
+
+	public void setOpstine(List<BOpstina> opstine) {
+		this.opstine = opstine;
+	}*/
 	
 	}

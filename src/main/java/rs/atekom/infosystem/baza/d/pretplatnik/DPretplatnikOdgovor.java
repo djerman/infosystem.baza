@@ -9,7 +9,7 @@ public class DPretplatnikOdgovor extends RestOdgovoriStrane{
 	private static final long serialVersionUID = 1L;
 	private DPretplatnik pretplatnik;
 	private List<DPretplatnik> lista;
-	private List<DPretplatnikPodaciOdgovor> listaSaPodacima;
+	private List<DPretplatnikPodaci> listaSaPodacima;
 	
 	public DPretplatnikOdgovor() {
 		// TODO Auto-generated constructor stub
@@ -31,11 +31,11 @@ public class DPretplatnikOdgovor extends RestOdgovoriStrane{
 		this.lista = lista;
 		}
 
-	public List<DPretplatnikPodaciOdgovor> getListaSaPodacima() {
+	public List<DPretplatnikPodaci> getListaSaPodacima() {
 		return listaSaPodacima;
 		}
 
-	public void setListaSaPodacima(List<DPretplatnikPodaciOdgovor> listaSaPodacima) {
+	public void setListaSaPodacima(List<DPretplatnikPodaci> listaSaPodacima) {
 		this.listaSaPodacima = listaSaPodacima;
 		}
 	
