@@ -14,7 +14,6 @@ rs\atekom\infosystem\baza\e\godina\EGodina.class
 rs\atekom\infosystem\baza\g\GPartnerOdgovor.class
 rs\atekom\infosystem\baza\a\prava\APravaOdgovor.class
 rs\atekom\infosystem\baza\a\uloga\AUloga.class
-rs\atekom\infosystem\baza\d\pretplatnik\DPretplatnikPodaciOdgovor.class
 rs\atekom\infosystem\baza\j\JArtikalOdgovor.class
 rs\atekom\infosystem\baza\a\drzava\ADrzava.class
 rs\atekom\infosystem\baza\db\kontoracun\DBKontoRacunOdgovor.class

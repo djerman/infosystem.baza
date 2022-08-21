@@ -2,12 +2,14 @@ package rs.atekom.infosystem.baza.i.grupaartikala;
 
 import java.util.List;
 import rs.atekom.infosystem.baza.RestOdgovoriStrane;
+import rs.atekom.infosystem.baza.e.konto.EKonto;
 
 public class IGrupaArtikalaOdgovor extends RestOdgovoriStrane{
 
 	private static final long serialVersionUID = 1L;
 	private IGrupaArtikala grupa;
 	private List<IGrupaArtikala> lista;
+	private List<EKonto> konta;
 	
 	public IGrupaArtikalaOdgovor(IGrupaArtikala grupa) {
 		this.grupa = grupa;
@@ -36,5 +38,13 @@ public class IGrupaArtikalaOdgovor extends RestOdgovoriStrane{
 	public void setLista(List<IGrupaArtikala> lista) {
 		this.lista = lista;
 		}
+
+	public List<EKonto> getKonta() {
+		return konta;
+	}
+
+	public void setKonta(List<EKonto> konta) {
+		this.konta = konta;
+	}
 	
 	}

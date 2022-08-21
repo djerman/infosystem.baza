@@ -9,9 +9,11 @@ import javax.persistence.UniqueConstraint;
 
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
+import rs.atekom.infosystem.baza.e.konto.EKonto;
 
 @Entity
-@Table(name = "i_grupaartikala", uniqueConstraints = {@UniqueConstraint(columnNames = {"pretplatnik", "sifra"}), @UniqueConstraint(columnNames = {"pretplatnik", "naziv"})})
+@Table(name = "i_grupaartikala", uniqueConstraints = {@UniqueConstraint(columnNames = {"pretplatnik", "sifra"}),
+		@UniqueConstraint(columnNames = {"pretplatnik", "naziv"})})
 public class IGrupaArtikala extends OsnovnaSema{
 
 	private static final long serialVersionUID = 1L;
@@ -19,6 +21,8 @@ public class IGrupaArtikala extends OsnovnaSema{
 	private String sifra;
 	private String naziv;
 	private String opis;
+	private EKonto prihod;
+	private EKonto rashod;
 	
 	public IGrupaArtikala() {
 		// TODO Auto-generated constructor stub
@@ -61,5 +65,25 @@ public class IGrupaArtikala extends OsnovnaSema{
 	public void setOpis(String opis) {
 		this.opis = opis;
 		}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "prihod")
+	public EKonto getPrihod() {
+		return prihod;
+	}
+
+	public void setPrihod(EKonto prihod) {
+		this.prihod = prihod;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "rashod")
+	public EKonto getRashod() {
+		return rashod;
+	}
+
+	public void setRashod(EKonto rashod) {
+		this.rashod = rashod;
+	}
 	
 	}

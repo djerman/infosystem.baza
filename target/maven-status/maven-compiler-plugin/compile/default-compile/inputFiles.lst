@@ -8,6 +8,7 @@ D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\da\kontogru
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\RestOdgovoriStrane.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\a\tipbrojaca\ATipBrojaca.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\a\jedinicamere\AJedinicaMere.java
+D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\e\organizacija\EOrganizacijaPodaci.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\f\grupeprava\FGrupePrava.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\f\brojac\FBrojacOdgovor.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\h\HKontakt.java
@@ -20,6 +21,7 @@ D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\OsnovnaSema
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\a\prava\APrava.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\g\GPartnerOdgovorPodaci.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\e\konto\EKontoOdgovor.java
+D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\d\pretplatnik\DPretplatnikPodaci.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\f\grupapartnera\FGrupaPartneraOdgovor.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\c\CMesto.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\e\grupaprava\EGrupaPrava.java
@@ -41,7 +43,6 @@ D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\e\tipdokume
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\a\poreskatarifa\APoreskaTarifaOdgovor.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\d\pretplatnik\DPretplatnik.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\a\drzava\ADrzavaOdgovor.java
-D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\d\pretplatnik\DPretplatnikPodaciOdgovor.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\e\godina\EGodina.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\g\GPartnerOdgovor.java
 D:\RADNI\git\infosystem.baza\src\main\java\rs\atekom\infosystem\baza\a\prava\APravaOdgovor.java

@@ -5,6 +5,7 @@ import java.util.List;
 import rs.atekom.infosystem.baza.RestOdgovoriStrane;
 import rs.atekom.infosystem.baza.a.jedinicamere.AJedinicaMere;
 import rs.atekom.infosystem.baza.a.poreskatarifa.APoreskaTarifa;
+import rs.atekom.infosystem.baza.e.konto.EKonto;
 import rs.atekom.infosystem.baza.i.grupaartikala.IGrupaArtikala;
 
 public class JArtikalOdgovor extends RestOdgovoriStrane{
@@ -15,6 +16,7 @@ public class JArtikalOdgovor extends RestOdgovoriStrane{
 	private List<AJedinicaMere> jedinice;
 	private List<APoreskaTarifa> tarife;
 	private List<IGrupaArtikala> grupe;
+	private List<EKonto> konta;
 	
 	public JArtikalOdgovor() {
 		// TODO Auto-generated constructor stub
@@ -59,5 +61,13 @@ public class JArtikalOdgovor extends RestOdgovoriStrane{
 	public void setGrupe(List<IGrupaArtikala> grupe) {
 		this.grupe = grupe;
 		}
+
+	public List<EKonto> getKonta() {
+		return konta;
+	}
+
+	public void setKonta(List<EKonto> konta) {
+		this.konta = konta;
+	}
 	
 	}
