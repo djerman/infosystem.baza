@@ -16,7 +16,7 @@ public class OsnovnaSema implements Serializable{
 	private Integer verzija;
 	
 	public OsnovnaSema() {
-		// TODO Auto-generated constructor stub
+		
 		}
 
 	@Id
