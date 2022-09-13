@@ -12,6 +12,7 @@ import javax.persistence.UniqueConstraint;
 
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
+import rs.atekom.infosystem.baza.e.konto.EKonto;
 import rs.atekom.infosystem.baza.f.grupapartnera.FGrupaPartnera;
 import rs.atekom.infosystem.baza.f.preduzece.FPreduzece;
 
@@ -24,12 +25,13 @@ public class GPartner extends OsnovnaSema{
 	private FGrupaPartnera grupaPartnera;
 	private String sifra;
 	private Boolean kupac;
-	private Long kupacKonto;
+	private EKonto kupacKonto;
 	private Boolean dobavljac;
-	private Long dobavljacKonto;
+	private EKonto dobavljacKonto;
 	private BigDecimal kupacRabat;
 	private BigDecimal dobavljacRabat;
 	private FPreduzece preduzece;
+	private String jezik;
 	
 	public GPartner() {
 		// TODO Auto-generated constructor stub
@@ -71,11 +73,13 @@ public class GPartner extends OsnovnaSema{
 		this.kupac = kupac;
 		}
 
-	public Long getKupacKonto() {
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "kupacKonto", nullable = true)
+	public EKonto getKupacKonto() {
 		return kupacKonto;
 		}
 
-	public void setKupacKonto(Long kupacKonto) {
+	public void setKupacKonto(EKonto kupacKonto) {
 		this.kupacKonto = kupacKonto;
 		}
 
@@ -87,11 +91,13 @@ public class GPartner extends OsnovnaSema{
 		this.dobavljac = dobavljac;
 		}
 
-	public Long getDobavljacKonto() {
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "dobavljacKonto", nullable = true)
+	public EKonto getDobavljacKonto() {
 		return dobavljacKonto;
 		}
 
-	public void setDobavljacKonto(Long dobavljacKonto) {
+	public void setDobavljacKonto(EKonto dobavljacKonto) {
 		this.dobavljacKonto = dobavljacKonto;
 		}
 
@@ -120,6 +126,14 @@ public class GPartner extends OsnovnaSema{
 
 	public void setDobavljacRabat(BigDecimal dobavljacRabat) {
 		this.dobavljacRabat = dobavljacRabat;
+		}
+
+	public String getJezik() {
+		return jezik;
+		}
+
+	public void setJezik(String jezik) {
+		this.jezik = jezik;
 		}
 	
 	}

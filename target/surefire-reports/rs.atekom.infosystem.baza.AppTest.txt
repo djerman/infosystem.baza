@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: rs.atekom.infosystem.baza.AppTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in rs.atekom.infosystem.baza.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in rs.atekom.infosystem.baza.AppTest

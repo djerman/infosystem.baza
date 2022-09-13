@@ -3,6 +3,7 @@ package rs.atekom.infosystem.baza.g;
 import java.util.List;
 import rs.atekom.infosystem.baza.RestOdgovoriStrane;
 import rs.atekom.infosystem.baza.c.CMesto;
+import rs.atekom.infosystem.baza.e.konto.EKonto;
 import rs.atekom.infosystem.baza.f.grupapartnera.FGrupaPartnera;
 
 public class GPartnerOdgovor extends RestOdgovoriStrane{
@@ -13,6 +14,7 @@ public class GPartnerOdgovor extends RestOdgovoriStrane{
 	private List<GPartnerOdgovorPodaci> listaSaPodacima;
 	private List<FGrupaPartnera> grupe;
 	private List<CMesto> mesta;
+	private List<EKonto> konta;
 	
 	public GPartnerOdgovor() {
 		// TODO Auto-generated constructor stub
@@ -65,5 +67,13 @@ public class GPartnerOdgovor extends RestOdgovoriStrane{
 	public void setMesta(List<CMesto> mesta) {
 		this.mesta = mesta;
 		}
+
+	public List<EKonto> getKonta() {
+		return konta;
+	}
+
+	public void setKonta(List<EKonto> konta) {
+		this.konta = konta;
+	}
 	
 	}

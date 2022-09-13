@@ -10,6 +10,7 @@ import javax.persistence.UniqueConstraint;
 
 import rs.atekom.infosystem.baza.OsnovnaSema;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
+import rs.atekom.infosystem.baza.e.konto.EKonto;
 
 @Entity
 @Table(name = "f_grupapartnera", uniqueConstraints = @UniqueConstraint(columnNames = {"pretplatnik", "sifra"}))
@@ -20,6 +21,8 @@ public class FGrupaPartnera extends OsnovnaSema{
 	private String sifra;
 	private String naziv;
 	private String opis;
+	private EKonto prihod;
+	private EKonto rashod;
 
 	public FGrupaPartnera() {
 		// TODO Auto-generated constructor stub
@@ -63,5 +66,25 @@ public class FGrupaPartnera extends OsnovnaSema{
 	public void setOpis(String opis) {
 		this.opis = opis;
 		}
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "prihod")
+	public EKonto getPrihod() {
+		return prihod;
+	}
+
+	public void setPrihod(EKonto prihod) {
+		this.prihod = prihod;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "rashod")
+	public EKonto getRashod() {
+		return rashod;
+	}
+
+	public void setRashod(EKonto rashod) {
+		this.rashod = rashod;
+	}
 	
 	}
