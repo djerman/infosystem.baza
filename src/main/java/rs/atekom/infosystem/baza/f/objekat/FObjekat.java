@@ -1,5 +1,7 @@
 package rs.atekom.infosystem.baza.f.objekat;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -7,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import rs.atekom.infosystem.baza.OsnovnaSema;
+import rs.atekom.infosystem.baza.c.CMesto;
 import rs.atekom.infosystem.baza.d.pretplatnik.DPretplatnik;
 import rs.atekom.infosystem.baza.e.konto.EKonto;
 import rs.atekom.infosystem.baza.e.organizacija.EOrganizacija;
@@ -21,8 +24,10 @@ public class FObjekat extends OsnovnaSema{
 	private EOrganizacija organizacija;
 	private String naziv;
 	private EKonto konto;
+	private CMesto mesto;
+	private String adresa;
 	private ETipDokumenta dokument;
-	private String opis;
+	private BigDecimal saldo;
 
 	public FObjekat() {
 		// TODO Auto-generated constructor stub
@@ -57,6 +62,24 @@ public class FObjekat extends OsnovnaSema{
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "mesto", nullable = true)
+	public CMesto getMesto() {
+		return mesto;
+	}
+
+	public void setMesto(CMesto mesto) {
+		this.mesto = mesto;
+	}
+
+	public String getAdresa() {
+		return adresa;
+	}
+
+	public void setAdresa(String adresa) {
+		this.adresa = adresa;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "konto", nullable = false)
 	public EKonto getKonto() {
 		return konto;
@@ -76,12 +99,12 @@ public class FObjekat extends OsnovnaSema{
 		this.dokument = dokument;
 	}
 
-	public String getOpis() {
-		return opis;
+	public BigDecimal getSaldo() {
+		return saldo;
 	}
 
-	public void setOpis(String opis) {
-		this.opis = opis;
+	public void setSaldo(BigDecimal saldo) {
+		this.saldo = saldo;
 	}
 	
 }
